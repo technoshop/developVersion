@@ -9,6 +9,7 @@ html {
 }
 body {
     font-family: ${vars.ff_base};
+    color: ${vars.color_base};
     padding: 0;
     margin: 0;
     padding-bottom:30px;
