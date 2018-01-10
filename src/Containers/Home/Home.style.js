@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import media from 'Src/theme/media';
+import * as vars from '../../theme/variables';
 
 
 export const Image = styled.img`
@@ -55,7 +56,7 @@ export const RevealP = styled.p`
         left: 0;
         width: 100%;
         height: 100%;
-        background: #000;
+        background: ${vars.color_2018};
         content: '';
 
 

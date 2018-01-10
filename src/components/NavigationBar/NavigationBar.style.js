@@ -33,6 +33,7 @@ export const NavItem = styled(Link) `
         transform: scale(1.0,.5);
         transform-origin: bottom;
         transition: transform .3s, background-color .3s;
+        transition-timing-function: ease-in-out;
         
     }
     
