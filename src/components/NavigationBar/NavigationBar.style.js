@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import * as vars from '../../theme/variables';
 import { Link } from 'react-router';
-
+import media from '../../theme/media';
 
 
 export const NavigationContainer = styled.div`
 display: flex;
 position: fixed;
 right: 60px;
-top:95px;
+top:30px;
 z-index:999;
+${media.sm`
+    right:auto;
+    left:50%;
+    transform: translateX(-50%);
+
+`}
 `;
 
 
