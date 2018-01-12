@@ -6,25 +6,34 @@ import * as vars from '../../theme/variables';
 export const Image = styled.img`
     width: 100%;
 `;
+
+export const HeroImageWr = styled.div`
+    overflow: hidden;
+
+`;
+
 export const HeroImage = styled.div`
     height: 100vh;
     background: url('${require('Src/assets/street-cropped.gif')}') no-repeat center;
-    background-size: cover;
+    background-size: 150%;
 
     display: flex;
     flex-direction: column;
     align-content: center;
     text-align: center;
     justify-content: center;
+    
 
     color: #ffffff;
     font-weight: bold;
     font-size: 2em;
 
     padding: 0 60px;
+    }
+
+
     ${media.xs`
     padding: 0 30px;
-
     `}
 
 
@@ -44,6 +53,7 @@ export const HeroImage = styled.div`
         padding: 20px;
         display: inline-block;
         width:auto;
+        
         
     }
     `;

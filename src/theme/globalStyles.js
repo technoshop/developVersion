@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import media from 'Src/theme/media';
 import * as vars from './variables';
 
 injectGlobal`
@@ -17,5 +18,7 @@ body {
 h1,h2,h3{
     font-weight:900;
     color: ${vars.color_counter};
+}
+
 }
 `
