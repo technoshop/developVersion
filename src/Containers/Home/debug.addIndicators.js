@@ -19,7 +19,6 @@
  * @mixin debug.addIndicators
  */
 
-export default function addIndicators() {
 	var define;
 	(function (root, factory) {
 		if (typeof define === 'function' && define.amd) {
@@ -33,7 +32,6 @@ export default function addIndicators() {
 			factory(root.ScrollMagic || (root.jQuery && root.jQuery.ScrollMagic));
 		}
 	}(this, function (ScrollMagic) {
-		"use strict";
 		var NAMESPACE = "debug.addIndicators";
 	
 		var
@@ -62,12 +60,12 @@ export default function addIndicators() {
 			Scene = this,
 				_indicator;
 	
-			var log = function () {
+			/* var log = function () {
 				if (Scene._log) { // not available, when main source minified
 					Array.prototype.splice.call(arguments, 1, 0, "(" + NAMESPACE + ")", "->");
 					Scene._log.apply(this, arguments);
 				}
-			};
+			}; */
 	
 			/**
 			 * Add visual indicators for a ScrollMagic.Scene.  
@@ -675,4 +673,5 @@ export default function addIndicators() {
 	}));
 	
 
-}
+
+	 

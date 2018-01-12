@@ -1,6 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css, injectGlobal } from 'styled-components';
 import media from 'Src/theme/media';
 import * as vars from '../../theme/variables';
+
+
 
 
 export const Image = styled.img`
@@ -15,7 +17,7 @@ export const HeroImageWr = styled.div`
 export const HeroImage = styled.div`
     height: 100vh;
     background: url('${require('Src/assets/street-cropped.gif')}') no-repeat center;
-    background-size: 150%;
+    background-size: cover;
 
     display: flex;
     flex-direction: column;
@@ -24,11 +26,14 @@ export const HeroImage = styled.div`
     justify-content: center;
     
 
+    transform:  scale(1.5);
+
     color: #ffffff;
     font-weight: bold;
     font-size: 2em;
 
     padding: 0 60px;
+    transition: all 0.5s ease-in-out;
     }
 
 
@@ -81,4 +86,38 @@ export const RevealP = styled.p`
              transform: rotateY(0deg);
          }
     `}
-`;    
+`;
+injectGlobal`
+.wrap {
+    min-height: 300vh;
+    background: linear-gradient(tomato, crimson);
+  }
+  .scroll-deck {
+    height: 100vh;
+    position: relative;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .scroll-deck1 {
+    h1 {
+      opacity: 0;
+      &.active {
+        animation: hi 0.5s ease 1s backwards;
+      }
+    } 
+  }
+  
+  @keyframes hi {
+    from {
+      transform: translate3d(-20px, 0, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+`;

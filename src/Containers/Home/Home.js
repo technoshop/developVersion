@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { ContainerFluid, Container } from 'Src/theme/grid';
-import { RevealP, Image, HeroImage, HeroImageWr } from './Home.style';
+import { RevealP, HeroImage } from './Home.style';
 import WhenInView from 'Src/components/WhenInView/WhenInView';
+import ScrollMagic from 'scrollmagic';
+import addIndicators from './debug.addIndicators';
+import TweenMax, {Back} from 'TweenMax';
+import TweenLite from 'TweenLite';
+import TimelineMax from 'TimelineMax';
 
 
 
@@ -10,6 +15,47 @@ import WhenInView from 'Src/components/WhenInView/WhenInView';
 class Home extends Component {
 
 
+    constructor() {
+        super();
+        this.state = {
+            magic: '',
+        }
+        this.handleResize = this.handleResize.bind(this);
+    }
+    componentDidMount() {
+        window.addEventListener('load', this.handleResize);
+        this.handleResize();
+    }
+    componentWillUnmount() {
+        window.addEventListener('load', this.handleResize);
+    }
+    handleResize() {
+        var controller = new ScrollMagic.Controller();
+
+        var tweenHi = new TimelineMax();
+        tweenHi.add([
+          TweenMax.from(".scroll-deck1 h1", 0.5, {
+            opacity: 1,
+            x: 0,
+            ease: Back.ease
+          }),
+          TweenMax.to(".scroll-deck1 h1", 0.5, {
+            opacity: 0,
+            x: 20,
+            ease: Back.ease
+          })
+        ]);
+        
+        var sceneHi = new ScrollMagic.Scene({
+            duration: '100%'
+          })
+          .setTween(tweenHi)
+          //.addIndicators({ name: "Hi (duration: 500)" })
+          .setPin(".scroll-deck1")
+          .addTo(controller);
+
+    }
+
 
 
     render() {
@@ -17,38 +63,11 @@ class Home extends Component {
         return (
 
             <ContainerFluid>
-                <HeroImage id="js-header">
-                    <h1>Techno Shop</h1>
-                    <h2>En yeni teknolojik ürünleri bulabileceğiniz en iyi sayfa</h2>
-                </HeroImage>
-                <Container>
-                    <h1>Hello</h1>
-                    {/* <Image src={require('../../assets/street-cropped.gif')} alt="street gif" /> */}
-                    <WhenInView>
-                        {({ isInView }) =>
-                            <RevealP hide={!isInView} >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum exercitationem est consequatur animi cum quis impedit praesentium sunt dolores in autem velit voluptate fuga consectetur, repellendus itaque dolorum eos quidem?
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim harum quos at fugiat cum a error odit ab aliquid nisi.
-                            </RevealP>
-                        }
-                    </WhenInView>
-                    <WhenInView>
-                        {({ isInView }) =>
-                            <RevealP hide={!isInView} >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum exercitationem est consequatur animi cum quis impedit praesentium sunt dolores in autem velit voluptate fuga consectetur, repellendus itaque dolorum eos quidem?
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim harum quos at fugiat cum a error odit ab aliquid nisi.
-                            </RevealP>
-                        }
-                    </WhenInView>
-                    <WhenInView>
-                        {({ isInView }) =>
-                            <RevealP hide={!isInView} >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum exercitationem est consequatur animi cum quis impedit praesentium sunt dolores in autem velit voluptate fuga consectetur, repellendus itaque dolorum eos quidem?
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim harum quos at fugiat cum a error odit ab aliquid nisi.
-                            </RevealP>
-                        }
-                    </WhenInView>
-                </Container>
+                <div className="wrap">
+                    <section className="scroll-deck scroll-deck1">
+                        <h1>Hi.</h1>
+                    </section>
+                </div>
             </ContainerFluid>
         );
     }

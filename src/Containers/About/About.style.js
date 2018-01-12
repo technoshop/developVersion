@@ -2,11 +2,8 @@ import styled, { injectGlobal } from 'styled-components';
 
 export const Spot = styled.h2`
     margin: 90px 0;    
-<<<<<<< HEAD
-    
 `;
-=======
-`;
+
 injectGlobal`
 .panel{
     height: 100vh;
@@ -46,4 +43,4 @@ injectGlobal`
 	background-color: #ea6300;
 }
 `
->>>>>>> 168cf814d55ecbd4907861a70506eb8f61713856
+

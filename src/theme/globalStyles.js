@@ -1,5 +1,4 @@
 import { injectGlobal } from 'styled-components';
-import media from 'Src/theme/media';
 import * as vars from './variables';
 
 injectGlobal`
