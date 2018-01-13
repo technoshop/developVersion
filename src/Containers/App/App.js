@@ -4,6 +4,7 @@ import ReallySmoothScroll from 'really-smooth-scroll';
 import {browserHistory} from 'react-router';
 
 browserHistory.listen(() => {
+  window.scroll(0,0);
   window.scrollTo(0,0);
 });
 

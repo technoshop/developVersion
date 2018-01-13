@@ -114,7 +114,7 @@ module.exports = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
-      {
+      /* {
         test: /\.js$/,
         include: path.join(paths.appNodeModules, 'scrollmagic'),
         loader: require.resolve('babel-loader')
@@ -128,7 +128,7 @@ module.exports = {
         test: /\.js$/,
         include: path.join(paths.appNodeModules, 'gsap/src/uncompressed/TimelineMax'),
         loader: require.resolve('babel-loader')
-      },
+      }, */
       /* {
         test: /\.js$/,
         include: 'C:/Users/Cspr/Desktop/react-portfolio-app/developVersion/src/Containers/About/debug.addIndicators',
