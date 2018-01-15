@@ -56,7 +56,7 @@ export default class Home extends Component {
         })
             .setTween(tweenHi)
             //.addIndicators({ name: "Hi (duration: 500)" })
-            .setPin(".scroll-deck1")
+            .setPin(".wrap")
             .addTo(controller);
     }
 

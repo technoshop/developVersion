@@ -9,7 +9,7 @@ export const Image = styled.img`
 
 export const HeroImageWr = styled.div`
     overflow: hidden;
-
+    
 `;
 
 

@@ -56,11 +56,9 @@ injectGlobal`
     background: linear-gradient(tomato, crimson);
   }
   .scroll-deck {
-    height: 100vh;
-    position: relative;
-
+    height: 100%;
     overflow: hidden;
-  
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +69,6 @@ injectGlobal`
   line-height: 0;
 }
   .scroll-deck1 {
-    position: relative !important;
     h1 {
       opacity: 0;
       &.active {
