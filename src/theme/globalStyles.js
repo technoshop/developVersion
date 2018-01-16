@@ -18,6 +18,7 @@ h1,h2,h3{
     font-weight:900;
     color: ${vars.color_counter};
 }
-
-}
+    .slide-dots{
+        list-style:none;
+    }
 `

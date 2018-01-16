@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ParallaxImage from 'react-image-parallax2';
-import {Container} from 'Src/theme/grid';
+import {Container} from '../../theme/grid';
 import {Product, Title} from './Projects.style';
 
 export default class Projects extends Component {

@@ -17,7 +17,6 @@ export const SpotHead = styled.h2`
     text-align: center;
     width: 100%;
     margin: 0;
-
     /* transition: color, .5s; */
     animation: hi 0.5s ease 1.5s backwards;
 
@@ -53,7 +52,7 @@ export const RevealP = styled.p`
 injectGlobal`
 .wrap {
     min-height: 100vh;
-    background: linear-gradient(tomato, crimson);
+    background: linear-gradient(${vars.color_2018}, ${vars.color_counter});
   }
   .scroll-deck {
     height: 100%;
