@@ -12,7 +12,7 @@ export default class Slider extends Component {
             },
             dots: true,
             infinite: true,
-            speed: 1000,
+            speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { ContainerFluid } from 'Src/theme/grid';
 import { SpotHead, HeroImage } from './Hero.style';
 import { TimelineMax, TweenMax, Back } from 'gsap';
@@ -15,6 +15,10 @@ export default class Home extends Component {
         }
         this.handleResize = this.handleResize.bind(this);
     }
+    static defaultProps = {
+        selam: "TechnoShop'a Hoşgeldiniz"
+    }
+
     componentDidMount() {
         // window.addEventListener('load', this.handleResize);
         this.handleResize();
@@ -46,8 +50,8 @@ export default class Home extends Component {
                 color: vars.color_counter,
                 ease: Back.ease,
             }, {
-                color: vars.color_2018,
-                ease: Back.ease
+                    color: vars.color_2018,
+                    ease: Back.ease
                 })
         ]);
 
@@ -68,7 +72,7 @@ export default class Home extends Component {
                         <h1 className={this.state.active} >
                             <HeroImage src={require('Src/assets/samuel-zeller-158996-min.jpg')} alt="" />
                         </h1>
-                        <SpotHead id="SpotHead" className={this.state.active}>TechnoShop'a Hoşgeldiniz</SpotHead>
+                        <SpotHead id="SpotHead" className={this.state.active}>{this.props.selam}</SpotHead>
                     </section>
                 </div>
             </ContainerFluid>

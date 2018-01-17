@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Hero from '../../components/Hero/Hero';
 import Slider from '../../components/Intro/Intro';
+import Features from '../../components/Features/Features';
 
 class Home extends Component {
    
@@ -10,6 +11,7 @@ class Home extends Component {
             <div>
                 <Hero></Hero>
                 <Slider/>
+                <Features/>
             </div>
         );
     }

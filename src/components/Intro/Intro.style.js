@@ -34,7 +34,7 @@ export const SliderWr = styled(SliderTemp) `
             width: 34px;
             height: 34px;
             opacity: 0.5;
-            transition:border .5s,opacity .5s;
+            transition:border .3s,opacity .3s;
             img {
                 margin-top: 3px;
                 width: 28px;
