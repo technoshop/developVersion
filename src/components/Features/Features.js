@@ -19,10 +19,10 @@ var features = [
 
 
 
-class listItem extends Component {
+class ListItem extends Component {
     render() {
         return (
-            <li>
+            <li onClick={this.props.onClick}>
                 {this.props.link}
             </li>
         );
@@ -36,10 +36,35 @@ class Features extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            link: '',
-            desc: '',
+            links: features.link,
+            desc: features.description,
         }
         this.handleClick = this.handleClick(this);
+        this.renderDesc = this.renderDesc(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            links: features.link,
+            desc: this.state.desc,
+        })
+
+    }
+    handleClick() {
+        this.setState({
+            links: features.link,
+            desc: this.state.desc,
+        })
+    }
+    renderLinks(feature, i) {
+        let link = feature.link;
+        return <ListItem key={i} onClick={this.handleClick} link={link} />
+
+    }
+    renderDesc(feature, i) {
+        return <li key={i}  >
+            {feature.desc}
+        </li>
     }
 
     render() {
@@ -48,9 +73,12 @@ class Features extends Component {
             <div>
                 <h2>Platform Features</h2>
                 <ul>
-                    <listItem/>
+                    {features.map((feature, i) => this.renderLinks(feature, i))}
                 </ul>
-                
+                <ul>
+                        {features.map((feature, i) => this.renderDesc(feature, i))}
+
+                </ul>
             </div>
         );
     }
