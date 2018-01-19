@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Btn } from './Features.style';
+import * as vars from '../../theme/variables';
 import { ContainerFluid, Container } from 'Src/theme/grid';
 
 
@@ -25,16 +26,14 @@ var features = [
 ]
 
 
-
 class ListItem extends Component {
-    
+
+
     render() {
-        let color = 'red';
         return (
             this.props.features.map((feature, i) => {
-
-                return <li key={i} >
-                    <Btn id="btn" value={i} className={feature.id === this.props.index && 'active'} onClick={this.props.onClick.bind(this)} index={this.props.index} >
+                return <li className="features-link__li" key={i} >
+                    <Btn style={{ color: i === 0 && vars.color_counter }} id={"btn" + i} value={i} className={feature.id === this.props.index && 'active'} onClick={this.props.onClick.bind(this)} index={this.props.index} >
                         {feature.link}
                     </Btn>
                 </li>
@@ -44,11 +43,12 @@ class ListItem extends Component {
 
 }
 
-var indexx
+var indexx;
 class Features extends Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
+        
         this.state = {
             features: features,
             link: features[0].link,
@@ -60,6 +60,7 @@ class Features extends Component {
 
     onClick(e) {
         e.preventDefault();
+        document.getElementById("btn0").style = undefined;
         indexx = e.target.value;
         if (indexx !== this.state.index) {
             this.setState({
@@ -77,7 +78,6 @@ class Features extends Component {
         }
     }
 
-    
 
     render() {
         let description = this.state.description;
@@ -86,16 +86,17 @@ class Features extends Component {
                 <div className="features">
                     <div className="feaures-list">
                         <h2 className="features-list__head" >Platform Features</h2>
-                        <ul>
+                        <ul className="features-list__ul">
                             <ListItem index={this.state.index} onClick={this.onClick} features={this.state.features} />
                         </ul>
                     </div>
-                    <h3 className="feature-subhead" style={{ opacity: this.state.style }}>{this.state.link}</h3>
                     <div style={{ opacity: this.state.style }} className="feature-carousel">
-                        {this.state.description}
+                    <h3 className="feature-subhead" style={{ opacity: this.state.style }}>{this.state.link}</h3>
+                        <p className="features-paragraph">
+                            {this.state.description}
+                        </p>
                     </div>
                 </div>
-
             </Container>
         );
     }

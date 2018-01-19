@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import ReallySmoothScroll from 'really-smooth-scroll';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 browserHistory.listen(() => {
-  window.scroll(0,0);
-  window.scrollTo(0,0);
+  window.scroll(0, 0);
+  window.scrollTo(0, 0);
 });
 
 ReallySmoothScroll.shim();
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavigationBar  />
+        <NavigationBar />
         {this.props.children}
       </div>
     );
